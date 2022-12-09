@@ -1,0 +1,17 @@
+{% extends 'helper/base.html' %}
+{% block content %}
+<h1>{{ page_title }}</h1>
+    <div class="container">
+    <table>
+        {% for object in object_list %}
+            <tr>
+            <td> <img class="card-img-top w-25" src="/media/{{ object.preview }}" alt="Card image cap"></td>
+            <td>{{ object.title }}</td>
+                <td><a href="category/?cat={{ object.pk }}">просмотр</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+
+{% endblock %}

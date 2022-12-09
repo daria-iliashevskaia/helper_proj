@@ -1,0 +1,12 @@
+{% extends 'helper/base.html' %}
+
+{% block content %}
+    <p>
+    Уверены, что хотите удалить шпаргалку "{{ object.title }}"?
+    </p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">подтвердить</button>
+    </form>
+    <a href="{% url 'helper:category_list' %}">передумал</a>
+{% endblock %}
